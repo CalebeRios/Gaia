@@ -1,0 +1,10 @@
+stages:
+  - build
+
+build bot:
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  script:
+    - sudo docker-compose up bot
