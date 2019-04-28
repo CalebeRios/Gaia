@@ -23,6 +23,7 @@ deployHomolog:
     - dev
   script:
     - ls
+    - echo $LATEST_VER_BOT_PROD
     - docker build -t $LATEST_VER_BOT_PROD -f docker/bot.Dockerfile .
     - docker build -t $LATEST_VER_ACTION_PROD -f docker/actions.Dockerfile .
     - echo "$REGISTRY_PASSWORD" | docker login -u "$REGISTRY_USER" --password-stdin
